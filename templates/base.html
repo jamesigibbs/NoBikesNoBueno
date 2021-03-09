@@ -28,13 +28,23 @@
     {% block extrajs %}
     {% endblock %}
 
-    <title>No Bike No Bueno</title>
+    <title>No Bike No Bueno {% block extratitle %}{% endblock %}</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <header class="container-fluid fixed-top"></header>
 
+    {% if messages %}
+        <div class="message-container"></div>
+    {% endif %}
 
-  
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
 
   </body>
 </html>
