@@ -2,10 +2,10 @@ html {
     height: 100%;
 }
 
+/* navbar */
+
 .navbar-brand img {
-    width: 10vw;
-    position:relative;
-    overflow:hidden;
+    width: 140px;
 }
 
 .navbar-brand {
@@ -30,18 +30,25 @@ html {
     padding-right: 60px;
 }
 
- @media only screen and (min-width: 768px) {
-    .navbar {
-        height: 100px;
-    }
- } 
+.hero {
+    background-image: url('../imgs/hero.jpg');
+    height: 85vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
- @media only screen and (min-width: 600px) {
-     .navbar {
-        height: 50px;
-    }
+
+/* resposive */
+
+ @media only screen and (max-width: 900px) {
 
     .navbar-brand img {
-        width: 60px;
+        width: 100px !important;
+    }
+
+    .hero {
+        height: 35vh;
     }
  } 

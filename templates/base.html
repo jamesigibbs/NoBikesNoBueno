@@ -65,12 +65,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cart</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Signup</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Signup</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -81,9 +90,6 @@
     {% if messages %}
         <div class="message-container"></div>
     {% endif %}
-
-    {% block navbar %}
-    {% endblock %}
 
     {% block page_header %}
     {% endblock %}
