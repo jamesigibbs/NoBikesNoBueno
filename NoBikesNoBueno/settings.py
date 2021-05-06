@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.instagram',
     'home',
-    'products'
 ]
 
 MIDDLEWARE = [

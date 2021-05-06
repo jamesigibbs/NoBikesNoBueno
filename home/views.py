@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from products.models import Product
+from home.models import Product
 # Create your views here.
 
 
 def index(request):
-    """ A view to render index.html """
-    
+    """ A view to render index.html and products in to cards"""
     products = Product.objects.all
 
     context = {
