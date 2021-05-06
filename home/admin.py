@@ -14,4 +14,5 @@ class ProductAdmin(admin.ModelAdmin):
 
     ordering = ('sku',)
 
+
 admin.site.register(Product, ProductAdmin)
