@@ -39,6 +39,9 @@ html {
     position: relative;
 }
 
+.header-text {
+    background-color: red;
+}
 
 /* resposive */
 
