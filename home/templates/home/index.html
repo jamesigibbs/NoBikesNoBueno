@@ -41,7 +41,9 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-info">More Details</button>
+                                            <a href="{% url 'product' product.id %}">
+                                                <button type="button" class="btn btn-info">More Details</button>
+                                            </a>
                                         </div>
                                         <div class="col-6">
                                             <button type="button" class="btn btn-dark"><i class="fas fa-cart-plus"></i></button>

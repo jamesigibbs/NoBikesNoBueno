@@ -16,7 +16,7 @@ def index(request):
 
 def product(request, product_id):
     """ A view to show more details on the each product """
-    products = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,
