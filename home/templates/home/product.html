@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <header class="hero">
+        <div class="header-text">
+            Just a good group of mates who love bikes <br>
+            Riding all over and having a laugh
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+       <div class="row">
+           <div class="col-6">
+               {% if product.image %}
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                {% endif %}
+           </div>
+       </div>
+    </div>
+
+{% endblock %}

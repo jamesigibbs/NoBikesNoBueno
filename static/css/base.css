@@ -41,6 +41,11 @@ html {
 
 .header-text {
     background-color: red;
+    width: 25%;
+    padding: 10px;
+    position: absolute;
+    top: 130px;
+    left: 70px;
 }
 
 /* resposive */
