@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
 from home.models import Product
 # Create your views here.
 
@@ -6,6 +8,14 @@ from home.models import Product
 def index(request):
     """ A view to render index.html and products in to cards"""
     products = Product.objects.all
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, 'No search criteria found!')
+                return redirect(reverse('products'))
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
 
     context = {
         'products': products,
