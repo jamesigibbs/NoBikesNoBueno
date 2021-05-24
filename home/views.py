@@ -5,9 +5,10 @@ from home.models import Product
 # Create your views here.
 
 
-def index(request):
+def home(request):
     """ A view to render index.html and products in to cards"""
-    products = Product.objects.all
+    products = Product.objects.all()
+    query = None
 
     if request.GET:
         if 'q' in request.GET:
@@ -16,9 +17,11 @@ def index(request):
                 messages.error(request, 'No search criteria found!')
                 return redirect(reverse('products'))
             queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'products': products,
+        'search_term': query,
     }
 
     return render(request, 'home/index.html', context)
