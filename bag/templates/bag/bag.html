@@ -1,3 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="mb-4 p-1 mt-3">Your Cart</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+
+                {% else %}
+                    <p class="lead mb-5">Your cart is empty</p>
+                    <a href="{% url 'home' %}" class="btn btn-dark">
+                        <span class="icon">
+                            <i class="fas fa-shopping-basket"></i>
+                        </span>
+                        <span>Keep Shopping</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
