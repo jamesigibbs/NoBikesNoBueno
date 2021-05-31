@@ -43,6 +43,11 @@ body {
     outline: none !important;
 }
 
+.cart {
+    font-size: 25px;
+    padding: 10px;
+}
+
 /* index.html */
 
 .banner {
@@ -67,7 +72,7 @@ body {
     top: 120px;
     left: 70px;
     font-size: 2.5rem;
-    background: rgba(181,136,104,0.35);
+    background: rgba(245, 243, 242, 0.35);
     border-radius: 20px;
 }
 

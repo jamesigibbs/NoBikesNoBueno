@@ -53,7 +53,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link cart" href="{% url 'bag_view' %}"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
