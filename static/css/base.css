@@ -57,7 +57,7 @@ body {
 
 .hero {
     background-image: url('../imgs/hero.jpg');
-    height: 85vh;
+    height: 65vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
