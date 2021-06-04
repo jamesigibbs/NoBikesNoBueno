@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 import os
 
@@ -28,6 +29,9 @@ def contact_view(request):
             sub_for_recipient = f'Message from - {name}'
         else: 
             sub_for_recipient = f'{subject} - {name}'
+        
+        user_msg = render_to_string('contact/emails/user_email.txt', {'name': name,})
+        nbnb_msg = render_to_string('contact/emails/nbnb_email.txt', {'name': name, 'message': message, 'email': email,})
 
         context = {
             'name': name,
@@ -36,13 +40,21 @@ def contact_view(request):
             'message': message,
         }
 
+        # Email to NBNB
         send_mail(
             sub_for_recipient,
-            message,
+            nbnb_msg,
             email,
             [os.environ.get("EMAIL_HOST_USER")],
         )
-
+        #Email to User
+        send_mail (
+            'No Bikes No Bueno',
+            user_msg,
+            os.environ.get("EMAIL_HOST_USER"),
+            [email],
+        )
+        
     else:
         context: {
             'name': name,
