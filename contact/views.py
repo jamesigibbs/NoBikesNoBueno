@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 
+import os
+
+if os.path.exists("env.py"):
+    import env
 
 # Create your views here.
 
@@ -36,7 +40,7 @@ def contact_view(request):
             sub_for_recipient,
             message,
             email,
-            ['nobikesnobuenoshop@gmail.com'],
+            [os.environ.get("EMAIL_HOST_USER")],
         )
 
     else:
