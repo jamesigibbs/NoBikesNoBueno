@@ -46,5 +46,4 @@ def contact_view(request):
             'subject': subject,
             'message': message,
         }
-    print(context['name'])
     return render(request, 'contact/contact.html', context)
