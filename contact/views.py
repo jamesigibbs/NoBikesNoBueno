@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
 
 import os
 
@@ -41,12 +42,16 @@ def contact_view(request):
         }
 
         # Email to NBNB
-        send_mail(
+        NBNBemail = EmailMessage(
             sub_for_recipient,
             nbnb_msg,
             email,
             [os.environ.get("EMAIL_HOST_USER")],
+            reply_to=[email]
         )
+
+        NBNBemail.send()
+
         #Email to User
         send_mail (
             'No Bikes No Bueno',

@@ -94,6 +94,20 @@ body {
     cursor: pointer;
 }
 
+/* Rider Bios */
+
+.rider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.rider-img {
+    height: 300px;
+    width: auto;
+}
+
 
 /* resposive */
 
