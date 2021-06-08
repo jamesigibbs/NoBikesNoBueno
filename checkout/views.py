@@ -1,12 +1,14 @@
-from django.shortcuts import render
-
-# Create your views here.
-
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 
 from .forms import OrderForm
 
+import os
+
+if os.path.exists("env.py"):
+    import env
+
+# Create your views here.
 
 def checkout(request):
     bag = request.session.get('bag', {})
@@ -18,6 +20,8 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
+        'stripe_public_key': os.environ.get("stripe_public_key"),
+        'client_secret': os.environ.get("client_secret"),
     }
 
     return render(request, template, context)
