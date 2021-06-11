@@ -189,3 +189,4 @@ EMAIL_USE_TLS = True
 STRIPE_CURRENCY = 'GBP'
 STRIPE_PUBLIC_KEY = os.environ.get('stripe_public_key', '')
 STRIPE_SECRET_KEY = os.environ.get('client_secret', '')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
