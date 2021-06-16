@@ -18,7 +18,11 @@ def contact_view(request):
     subject = None
     message =  None
     sub_for_recipient = None
-    context = {}
+    nav = 'contact'
+    context = {
+        'nav': nav
+    }
+    context_email = {}
 
     if request.method == 'POST':
         name = request.POST['name']
@@ -34,7 +38,7 @@ def contact_view(request):
         user_msg = render_to_string('contact/emails/user_email.txt', {'name': name,})
         nbnb_msg = render_to_string('contact/emails/nbnb_email.txt', {'name': name, 'message': message, 'email': email,})
 
-        context = {
+        context_email = {
             'name': name,
             'email': email,
             'subject': subject,
@@ -60,11 +64,16 @@ def contact_view(request):
             [email],
         )
         
+        context.update(context_email)
+
     else:
-        context: {
+        context_email: {
             'name': name,
             'email': email,
             'subject': subject,
             'message': message,
         }
+
+        context.update(context_email)
+
     return render(request, 'contact/contact.html', context)

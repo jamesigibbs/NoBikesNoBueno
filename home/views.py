@@ -13,6 +13,7 @@ def home(request):
     query = None
     sort = None
     direction = None
+    nav = 'home'
 
     if request.GET:
         if 'sort' in request.GET:
@@ -40,7 +41,8 @@ def home(request):
     context = {
         'products': products,
         'search_term': query,
-        'current_sorting': current_sorting
+        'current_sorting': current_sorting,
+        'nav': nav,
     }
 
     return render(request, 'home/index.html', context)

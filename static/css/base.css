@@ -49,10 +49,32 @@ body {
     padding: 10px;
 }
 
+.cart-i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar-collapse.collapse.show {
 	z-index: 2;
 	background: white;
 	padding: 20px;
+}
+
+.collapsing {
+    z-index: 2;
+    background: white;
+    padding: 20px;
+}
+
+.right-nav {
+    padding-top: 12px;
 }
 
 /* index.html */
