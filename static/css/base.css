@@ -77,6 +77,10 @@ body {
     padding-top: 12px;
 }
 
+.active {
+    font-weight: 500;
+}
+
 /* index.html */
 
 .banner {
