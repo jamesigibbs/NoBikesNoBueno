@@ -48,6 +48,19 @@ def home(request):
     return render(request, 'home/index.html', context)
 
 
+def add_one_to_bag(request, item_id):
+    """ Add an item to the shopping bag """
+    bag = request.session.get('bag', {})
+
+    if item_id in list(bag.keys()):
+        bag[item_id] += 1
+    else:
+        bag[item_id] = 1
+
+    request.session['bag'] = bag
+    return redirect(reverse('home'))
+
+
 def product(request, product_id):
     """ A view to show more details on the each product """
     product = get_object_or_404(Product, pk=product_id)

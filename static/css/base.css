@@ -113,6 +113,29 @@ body {
     font-size: 15px;
 }
 
+.search-btn {
+    background-color: #545B62;
+    color: #fafafa;
+}
+
+.sorting:hover {
+    color: #212529;
+}
+
+.total-box {
+	background-color: #545B62;
+	height: 38px;
+    width: 150px;
+    border-radius: 4px;
+}
+
+.total-text {
+    color: #fafafa;
+    padding-top: 6px; 
+    padding-bottom: 6px;
+    padding-right: 4px;
+    padding-left: 9px;
+}
 
 /* product.html */
 
