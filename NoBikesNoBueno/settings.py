@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     # Other
     'crispy_forms',
+    'responsive',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'NoBikesNoBueno.urls'
 

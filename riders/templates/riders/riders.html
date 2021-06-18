@@ -4,30 +4,65 @@
 {% block content %}
     <h1 class="text-center mt-3">No Bikes No Bueno</h1>
     
-    <div class="container-fluid">
+    <div class="container-fluid big-screen"> 
         {% for rider in riders %}
             {% if forloop.counter|divisibleby:2 %}
                 <div class="row p-3">
-                    <div class="col-6">
-                        <img class="rider-img rider" src="/media/riders/{{ rider.image }}" alt="">
+                    <div class="col-md-6 col-12 d-flex justify-content-center align-items-center">
+                        <img class="rider-img rider" src="/media/riders/{{ rider.image }}" alt="{{ rider.name }}">
                     </div>
-                    <div class="col-6">
-                        <h3 class="text-center rider title">{{ rider.name }}</h3>
-                        <p class="rider">{{ rider.description }}</p>
+                    <div class="col-md-6 col-12">
+                        <h3 class="text-center rider title pb-3 pt-4">{{ rider.name }}</h3>
+                        <p class="rider d-flex justify-content-center">{{ rider.description }}</p>
+                    </div>
+                    <div class="col-12 mb-3 mt-1">
+                        <hr>
                     </div>
                 </div>
             {% else %}
                 <div class="row p-3">
-                    <div class="col-6">
-                        <h3 class="text-center rider title">{{ rider.name }}</h3>
+                    <div class="col-md-6 col-12">
+                        <h3 class="text-center rider title pb-3 pt-4">{{ rider.name }}</h3>
                         <p class="rider">{{ rider.description }}</p>
                     </div>
-                    <div class="col-6">
-                        <img class="rider-img rider" src="/media/riders/{{ rider.image }}" alt="">
+                    <div class="col-md-6 col-12 d-flex justify-content-center align-items-center">
+                        <img class="rider-img rider" src="/media/riders/{{ rider.image }}" alt="{{ rider.name }}">
+                    </div>
+                    <div class="col-12 mb-3 mt-1">
+                        <hr>
                     </div>
                 </div>
             {% endif %}
             
         {% endfor %}
     </div>
+
+    <div class="container-fluid small-screen">
+        {% for rider in riders %}
+            <div class="row p-3">
+                <div class="col-md-6 col-12 d-flex justify-content-center align-items-center">
+                    <img class="rider-img rider" src="/media/riders/{{ rider.image }}" alt="{{ rider.name }}">
+                </div>
+                <div class="col-md-6 col-12">
+                    <h3 class="text-center rider title pb-3 pt-4">{{ rider.name }}</h3>
+                    <p class="rider d-flex justify-content-center">{{ rider.description }}</p>
+                </div>
+                <div class="col-12 mb-3 mt-1">
+                    <hr>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script type="text/javascript">
+        if ($(window).width() < 768) {
+            $('.big-screen').hide();
+            $('.small-screen').show();
+        } else {
+            $('.big-screen').show();
+            $('.small-screen').hide();
+        };
+    </script>
 {% endblock %}
