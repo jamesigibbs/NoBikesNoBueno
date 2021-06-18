@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
 
 # Create your views here.
 
@@ -25,6 +26,11 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
 
+    if quantity > 1:
+        messages.success(request, 'Items added to cart')
+    else:
+        messages.success(request, 'Item added to cart')
+    
     return redirect(redirect_url)
 
 

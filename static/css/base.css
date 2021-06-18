@@ -9,6 +9,13 @@ body {
     background-color: grey;
 }
 
+input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      input[type="number"]:hover,
+      input[type="number"]:focus {
+        -moz-appearance: number-input;
+      }
 
 
 .title {
@@ -189,5 +196,33 @@ body {
         position: absolute;
         top: 65px;
         left: 35px;
+    }
+
+    /* products */
+
+    .card-img-top {
+        height: 350px;
+        width: auto;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0.5px !important;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quantity-form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .description {
+        text-align: center;
     }
  } 

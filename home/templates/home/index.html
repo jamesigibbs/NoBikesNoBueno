@@ -60,6 +60,13 @@
                     </form>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 text-center mt-3">
+                    {% for message in messages %}
+                        <h4 class="message">{{ message }}</h4>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
 
         <!-- Product Grid -->
@@ -93,7 +100,7 @@
                                         <div class="col-6 d-flex justify-content-center">
                                             <form action="{% url 'add_one_to_bag' product.id %}" method="POST">
                                                 {% csrf_token %}
-                                                    <button type="submit" class="btn btn-dark"><i class="fas fa-cart-plus"></i></button>
+                                                    <button type="submit" id="add-to-cart" class="btn btn-dark"><i class="fas fa-cart-plus"></i></button>
                                             </a>
                                         </div>
                                     </div>

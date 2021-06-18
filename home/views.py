@@ -32,7 +32,7 @@ def home(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, 'No search criteria found!')
-                return redirect(reverse('products'))
+                return redirect(reverse('home'))
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -57,6 +57,7 @@ def add_one_to_bag(request, item_id):
     else:
         bag[item_id] = 1
 
+    messages.success(request, 'Item added to cart')
     request.session['bag'] = bag
     return redirect(reverse('home'))
 
