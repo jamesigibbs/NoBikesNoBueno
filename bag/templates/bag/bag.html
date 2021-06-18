@@ -10,6 +10,11 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-12 text-center mt-3">
+                {% for message in messages %}
+                    <h6 class="message">{{ message }}</h6>
+                {% endfor %}
+            </div>
             <div class="col">
                 {% if bag_items %}
                     <div class="table-responsive rounded">
@@ -31,7 +36,7 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                        <p class="my-0 small sku-colour">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.product.price }}</p>
@@ -64,8 +69,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                                        <a class="update-link text-primary update-btn"><small>Update</small></a>
+                                        <a class="remove-item text-danger float-right update-btn" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -78,11 +83,6 @@
                                     <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                                    {% if free_delivery_delta > 0 %}
-                                        <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
-                                        </p>
-                                    {% endif %}
                                 </td>
                             </tr>
                             <tr>
@@ -130,9 +130,15 @@
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
-        
-        var form = $(this).prev('.update-form');
-        form.submit();
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+            .done(function() {
+        location.reload();
+        });
     })
 </script>
 {% endblock %}

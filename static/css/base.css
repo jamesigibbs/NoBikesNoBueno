@@ -171,6 +171,15 @@ input[type="number"] {
     width: auto;
 }
 
+/* Cart */
+
+.sku-colour {
+    color: #e8e4d6;
+}
+
+.update-btn {
+    font-weight: 500;
+}
 
 /* resposive */
 

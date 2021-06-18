@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+
+from home.models import Product
 
 # Create your views here.
 
@@ -55,25 +57,14 @@ def adjust_bag(request, item_id):
     return redirect(reverse('bag_view'))
 
 
-def remove_item(request, item_id):
-    """ Add an item to the shopping bag """
-    try:
-        quantity = int(request.POST.get('quantity'))
-        bag = request.session.get('bag', {})
+def remove_from_bag(request, item_id):
+    """Remove the item from the shopping bag"""
 
-        if item_id in list(bag.keys()):
-            bag[item_id] += quantity
-        else:
-            bag[item_id] = quantity
+    product = get_object_or_404(Product, pk=item_id)
+    bag = request.session.get('bag', {})
 
-        if quantity > 0:
-            quantity = 0
-            bag[item_id] = quantity
-        else:
-            bag.pop(item_id)
+    bag.pop(item_id)
+    messages.success(request, f'Removed {product.name} from your bag')
 
-        request.session['bag'] = bag
-
-        return HttpResponse(status=200)
-    except:
-        return HttpResponse(status=500)
+    request.session['bag'] = bag
+    return HttpResponse(status=200)
