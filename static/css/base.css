@@ -181,6 +181,20 @@ input[type="number"] {
     font-weight: 500;
 }
 
+/* Checkout Extra css */
+
+.card-input {
+	background-color: white;
+	height: 39px;
+	border-radius: 5px;
+}
+
+.payment {
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
 /* resposive */
 
  @media only screen and (max-width: 900px) {
