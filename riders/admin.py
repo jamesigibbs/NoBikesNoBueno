@@ -9,7 +9,7 @@ class RiderAdmin(admin.ModelAdmin):
         'id',
         'name',
         'description',
-        'image'
+        'image',
     )
 
 
