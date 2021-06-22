@@ -1,1 +1,1 @@
-web: gunicorn NoBikesNoBueno:application
+web: gunicorn NoBikesNoBueno.wsgi:application
