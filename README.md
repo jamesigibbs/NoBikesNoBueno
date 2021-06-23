@@ -1,7 +1,7 @@
 
 <a name="top"></a>
 <div align="center">
-<img src="static/favicon/favicon.ico" width="120">
+<img src="static/imgs/main-logo-trans.png" width="120">
 </div>
 
 <div align="center">
@@ -10,7 +10,7 @@
 
 ---
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![GitHub language count](https://img.shields.io/github/languages/count/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&label=Languages%20Used&logo=GitHub&logoColor=%23adb993&style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![Lines of code](https://img.shields.io/tokei/lines/github.com/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![Website](https://img.shields.io/website?down_color=red&down_message=Offline&logo=GitHub&logoColor=%23adb993&style=flat-square&up_color=green&up_message=Online&url=https%3A%2F%2Fstreet-art-at-home.herokuapp.com%2F)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![GitHub language count](https://img.shields.io/github/languages/count/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&label=Languages%20Used&logo=GitHub&logoColor=%23adb993&style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![Lines of code](https://img.shields.io/tokei/lines/github.com/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/jamesigibbs/NoBikesNoBueno?color=%23ec71c9&logo=GitHub&logoColor=%23adb993&style=flat-square) ![Website](https://img.shields.io/website?url=https%3A%2F%2Fdashboard.heroku.com%2Fapps%2Fnobikesnobueno%2Factivity)
 
 ---
 
