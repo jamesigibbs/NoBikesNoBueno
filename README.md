@@ -15,7 +15,7 @@
 ---
 
 <div align="center">
-<img src="readmeimages/mock-up.png" width="600">
+<img src="readmeimages/mock-up.PNG" width="600">
 </div>
 
 ---
