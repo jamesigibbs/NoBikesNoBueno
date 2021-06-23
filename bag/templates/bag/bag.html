@@ -10,12 +10,14 @@
             </div>
         </div>
         <div class="row">
+            <!-- Messages -->
             <div class="col-12 text-center mt-3">
                 {% for message in messages %}
                     <h6 class="message">{{ message }}</h6>
                 {% endfor %}
             </div>
             <div class="col">
+                <!-- Render Bag Items -->
                 {% if bag_items %}
                     <div class="table-responsive rounded">
                         <table class="table table-sm table-borderless">
@@ -118,7 +120,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
+    {{ block.super }}
 {% include 'home/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">

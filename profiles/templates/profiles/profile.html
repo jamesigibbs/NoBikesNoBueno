@@ -6,14 +6,6 @@
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
     <div class="container">
         <div class="row">
@@ -23,6 +15,7 @@
                 <hr>
             </div>
         </div>
+        <!-- Delivery Form -->
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p class="sku-colour">Default Delivery Information</p>
@@ -32,6 +25,7 @@
                     <button class="btn btn-dark text-uppercase float-right"><i class="fas fa-sync"></i> Update Information</button>
                 </form>
             </div>
+            <!-- Order History -->
             <div class="col-12 col-lg-6">
                 <p class="sku-colour">Order History</p>
                 <div class="order-history table-responsive">

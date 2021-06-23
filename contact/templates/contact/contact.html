@@ -11,6 +11,8 @@
         {% if name != None %}
             <h3 class="text-center">Thank you {{ name }} <br> Your message has been sent!</h3>
         {% endif %}
+
+        <!-- Contact Form -->
         <div class="row">
             <div class="col">
                 <form class="contact-f" action="{% url 'contact' %} " method="POST">

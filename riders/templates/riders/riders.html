@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1 class="text-center title mt-3">No Bikes No Bueno</h1>
-    
+    <!-- Big Screen Sizes -->
     <div class="container-fluid big-screen"> 
         {% for rider in riders %}
             {% if forloop.counter|divisibleby:2 %}
@@ -37,6 +37,7 @@
         {% endfor %}
     </div>
 
+    <!-- Small Screen sizes -->
     <div class="container-fluid small-screen">
         {% for rider in riders %}
             <div class="row p-3">
@@ -57,6 +58,7 @@
 
 {% block postloadjs %}
     <script type="text/javascript">
+    // Change postion of picture depending on screen size
         if ($(window).width() < 768) {
             $('.big-screen').hide();
             $('.small-screen').show();
