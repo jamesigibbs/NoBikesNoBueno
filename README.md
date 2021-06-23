@@ -29,7 +29,6 @@
 ### [Features left to implement](#left)
 ### [Fonts and Colours](#theme)
 ### [Database Models](#database)
-### [Features left to implement](#left)
 ### [Technologies used](#tech)
 ### [Testing](#testingsection)
 - [Validators](#code)
