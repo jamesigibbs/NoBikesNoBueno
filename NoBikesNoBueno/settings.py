@@ -139,6 +139,10 @@ else:
     }
 
 # DATABASES = {
+#         'default': dj_database_url.parse('postgres://dzhhlzphruvaun:fa2cdee7d7a4a6d8471a136dc56727aff3982b64394b017368ed4d49902832cd@ec2-108-128-104-50.eu-west-1.compute.amazonaws.com:5432/d58hb6sde9jkdo')
+#     }
+
+# DATABASES = {
 #         'default': {
 #             'ENGINE': 'django.db.backends.sqlite3',
 #             'NAME': BASE_DIR / 'db.sqlite3',
