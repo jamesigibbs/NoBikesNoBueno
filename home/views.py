@@ -4,7 +4,6 @@ from django.db.models import Q
 from home.models import Product
 
 from django.db.models.functions import Lower
-# Create your views here.
 
 
 def home(request):
