@@ -8,15 +8,13 @@ import os
 if os.path.exists("env.py"):
     import env
 
-# Create your views here.
 
 def contact_view(request):
     """ A view to render the shopping bag page """
-        
     name = None
-    email =  None
+    email = None
     subject = None
-    message =  None
+    message = None
     sub_for_recipient = None
     nav = 'contact'
     context = {
@@ -26,17 +24,22 @@ def contact_view(request):
 
     if request.method == 'POST':
         name = request.POST['name']
-        email =  request.POST['email']
+        email = request.POST['email']
         subject = request.POST['subject']
-        message =  request.POST['message']
-        
-        if subject == None:
+        message = request.POST['message']
+        if subject is None:
             sub_for_recipient = f'Message from - {name}'
-        else: 
+        else:
             sub_for_recipient = f'{subject} - {name}'
-        
-        user_msg = render_to_string('contact/emails/user_email.txt', {'name': name,})
-        nbnb_msg = render_to_string('contact/emails/nbnb_email.txt', {'name': name, 'message': message, 'email': email,})
+
+        user_msg = render_to_string(
+            'contact/emails/user_email.txt',
+            {'name': name, },
+            )
+        nbnb_msg = render_to_string(
+            'contact/emails/nbnb_email.txt',
+            {'name': name, 'message': message, 'email': email, },
+                                        )
 
         context_email = {
             'name': name,
@@ -51,19 +54,19 @@ def contact_view(request):
             nbnb_msg,
             email,
             [os.environ.get("EMAIL_HOST_USER")],
-            reply_to=[email]
+            reply_to=[email],
         )
 
         NBNBemail.send()
 
-        #Email to User
-        send_mail (
+        # Email to User
+        send_mail(
             'No Bikes No Bueno',
             user_msg,
             os.environ.get("EMAIL_HOST_USER"),
             [email],
         )
-        
+
         context.update(context_email)
 
     else:

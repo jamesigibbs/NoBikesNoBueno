@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
-from django.conf import settings
 
 from .models import Order, OrderLineItem
 from home.models import Product
@@ -13,6 +12,7 @@ import os
 
 if os.path.exists("env.py"):
     import env
+
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -27,7 +27,7 @@ class StripeWH_Handler:
             {'order': order}
         )
 
-        send_mail (
+        send_mail(
             f'No Bikes No Bueno order:{order.order_number}',
             body,
             os.environ.get("EMAIL_HOST_USER"),
@@ -59,8 +59,8 @@ class StripeWH_Handler:
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-        
-          # Update profile information if save_info was checked
+
+        # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
@@ -108,7 +108,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
-                     user_profile=profile,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
